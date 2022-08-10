@@ -1,11 +1,14 @@
-function towelSort(arr){
-arrsort = arr.join().split(',').sort(function(a, b) { return a - b }),
-newarr = [];
-for(var i = 0; i < arrsort.length; i++){
-  newarr[i]=parseInt(arrsort[i]);
-  }
-  return newarr
-}
+
 module.exports = function towelSort (matrix) {
-  return [];
+  if (!matrix) return [];
+  const result = [];
+	for (let i = 0; i < matrix.length; i++) {
+		if (i % 2 === 0) {
+		result.push(...matrix[i]);
+		} else {
+		result.push(...(matrix[i].reverse()));
+		}
+
+	};
+return result;
 }
